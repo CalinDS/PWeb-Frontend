@@ -7,7 +7,7 @@
  <button mat-icon-button>
    <mat-icon>notifications</mat-icon>
  </button>
- <button mat-icon-button>
+ <button mat-icon-button routerLink="/profile" routerLinkActive="active">
   <mat-icon>person</mat-icon>
 </button>
 </mat-toolbar>
@@ -29,11 +29,15 @@
       </button>
     </mat-list-item>
 
-    <mat-list-item>
+    <!-- <mat-list-item>
       <button mat-button routerLink="/accommodations" routerLinkActive="active">
         <mat-icon>exit_to_app</mat-icon>
         Log out
       </button>
+    </mat-list-item> -->
+
+    <mat-list-item>
+      <app-auth-button></app-auth-button>
     </mat-list-item>
 
   </mat-drawer>
