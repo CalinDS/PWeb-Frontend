@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AuthModule } from '@auth0/auth0-angular';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,11 @@ import { AuthButtonComponent } from './auth-button.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { CreateRefugeeComponent } from './create-refugee/create-refugee.component';
 import { HomeComponent } from './home/home.component';
+import { CreateVolunteerComponent } from './create-volunteer/create-volunteer.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateAccommodationComponent } from './create-accommodation/create-accommodation.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +35,8 @@ import { HomeComponent } from './home/home.component';
     UserProfileComponent,
     CreateRefugeeComponent,
     HomeComponent,
+    CreateVolunteerComponent,
+    CreateAccommodationComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,8 +46,9 @@ import { HomeComponent } from './home/home.component';
       clientId: 'IPFsAUHd3sjH5A0zmUXDXIhdHgs2oKEo'
     }),
 
-    AppRoutingModule, RouterModule,
-    MatIconModule, MatToolbarModule, MatButtonModule, BrowserAnimationsModule, MatSidenavModule, MatMenuModule, MatListModule
+    AppRoutingModule, RouterModule, HttpClientModule,
+    MatIconModule, MatToolbarModule, MatButtonModule, BrowserAnimationsModule, MatSidenavModule, MatMenuModule, MatListModule, MatFormFieldModule,
+    MatInputModule, FormsModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

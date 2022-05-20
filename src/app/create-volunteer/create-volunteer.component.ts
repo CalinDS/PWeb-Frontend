@@ -5,15 +5,14 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-create-refugee',
-  templateUrl: './create-refugee.component.html',
-  styleUrls: ['./create-refugee.component.scss']
+  selector: 'app-create-volunteer',
+  templateUrl: './create-volunteer.component.html',
+  styleUrls: ['./create-volunteer.component.scss']
 })
-export class CreateRefugeeComponent implements OnInit {
+export class CreateVolunteerComponent implements OnInit {
 
   public name = "";
   public contactInfo = "";
-  public familyMembersNo: any;
   user: any;
 
   constructor(public auth: AuthService, private http: HttpClient, private router: Router) { }
@@ -25,13 +24,13 @@ export class CreateRefugeeComponent implements OnInit {
   }
 
   saveProfile(): void {
-    const body = { 
+    const body = {
       auth_id: this.user.sub.replace('|', ""),
       email: this.user.email,
       name: this.name,
-      type: "refugee",
+      type: "volunteer",
       contact_info: this.contactInfo,
-      family_members_no: this.familyMembersNo 
+      family_members_no: -1
     };
     this.http.post<any>('http://127.0.0.1:5000/users/create', body).subscribe(
       (data) => {
