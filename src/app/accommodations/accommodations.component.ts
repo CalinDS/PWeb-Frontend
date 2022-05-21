@@ -3,6 +3,8 @@ import { AuthService } from '@auth0/auth0-angular';
 
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { PopupComponent } from './popup/popup.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-accommodations',
@@ -13,9 +15,18 @@ export class AccommodationsComponent implements OnInit {
 
   authUser: any;
   user: any;
-  accommodations: any;
+  accommodations!: any[];
   
-  constructor(public auth: AuthService, private http: HttpClient, private router: Router) { }
+  constructor(public auth: AuthService, private http: HttpClient, private router: Router, public dialog: MatDialog) { }
+
+  openPopup(acc: any) {
+    console.log(acc);
+    this.dialog.open(PopupComponent, {
+      data: {
+        accommodation: acc,
+      },
+    });
+  }
 
   ngOnInit(): void {
     this.auth.user$.subscribe(

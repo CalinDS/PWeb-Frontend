@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -27,6 +28,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateAccommodationComponent } from './create-accommodation/create-accommodation.component';
 import { AccommodationComponent } from './accommodations/accommodation/accommodation.component';
+import { PopupComponent } from './accommodations/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { AccommodationComponent } from './accommodations/accommodation/accommoda
     CreateVolunteerComponent,
     CreateAccommodationComponent,
     AccommodationComponent,
+    PopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,7 @@ import { AccommodationComponent } from './accommodations/accommodation/accommoda
 
     AppRoutingModule, RouterModule, HttpClientModule,
     MatIconModule, MatToolbarModule, MatButtonModule, BrowserAnimationsModule, MatSidenavModule, MatMenuModule, MatListModule, MatFormFieldModule,
-    MatInputModule, FormsModule, ReactiveFormsModule
+    MatInputModule, FormsModule, ReactiveFormsModule, MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
