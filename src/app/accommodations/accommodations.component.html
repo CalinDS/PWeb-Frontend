@@ -1,1 +1,9 @@
-<p>accommodations works!</p>
+<div class="container">
+    <app-accommodation class="item" *ngFor="let acc of accommodations"
+        image={{acc.photo}}
+        address={{acc.address}}
+        free_beds_no={{acc.free_beds_no}}
+        beds_no={{acc.beds_no}}
+    >
+    </app-accommodation>
+</div>

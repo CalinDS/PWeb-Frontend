@@ -26,6 +26,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateAccommodationComponent } from './create-accommodation/create-accommodation.component';
+import { AccommodationComponent } from './accommodations/accommodation/accommodation.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CreateAccommodationComponent } from './create-accommodation/create-acco
     HomeComponent,
     CreateVolunteerComponent,
     CreateAccommodationComponent,
+    AccommodationComponent,
   ],
   imports: [
     BrowserModule,
