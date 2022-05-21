@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccommodationsComponent } from './accommodations/accommodations.component';
+import { CreateAccommodationComponent } from './create-accommodation/create-accommodation.component';
 import { CreateRefugeeComponent } from './create-refugee/create-refugee.component';
 import { CreateVolunteerComponent } from './create-volunteer/create-volunteer.component';
 import { HomeComponent } from './home/home.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'profile', component: UserProfileComponent },
   { path: 'accommodations', component: AccommodationsComponent },
   { path: 'create-refugee', component: CreateRefugeeComponent },
-  { path: 'create-volunteer', component: CreateVolunteerComponent }
+  { path: 'create-volunteer', component: CreateVolunteerComponent },
+  { path: 'create-accommodation', component: CreateAccommodationComponent }
 ];
 
 @NgModule({
