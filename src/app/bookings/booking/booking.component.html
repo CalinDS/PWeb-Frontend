@@ -1,0 +1,22 @@
+<div class="container">
+
+    <mat-expansion-panel hideToggle class="item">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{address}}
+          </mat-panel-title>
+          <!-- <mat-panel-description>
+            {{beds_no}} beds
+          </mat-panel-description> -->
+        </mat-expansion-panel-header>
+        <div *ngFor="let r of refugees">
+            <p><b>{{r.refugee_name}}</b></p>
+            <p>{{r.family_members_no}} family members</p>
+            <p>{{r.contact_info}}</p>
+            <mat-divider>
+
+            </mat-divider>
+        </div>
+      </mat-expansion-panel>
+
+</div>

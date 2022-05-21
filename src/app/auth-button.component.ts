@@ -8,7 +8,7 @@ import { DOCUMENT } from '@angular/common';
 
   <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
     <mat-list-item>
-      <button mat-button (click)="auth.logout({ returnTo: document.location.origin })">
+      <button mat-button (click)="auth.logout({ returnTo: document.location.origin })" style='width: 100%; text-align: left;'>
         <mat-icon>logout</mat-icon>
         Log out
       </button>
@@ -17,7 +17,7 @@ import { DOCUMENT } from '@angular/common';
 
   <ng-template #loggedOut>
     <mat-list-item>
-      <button mat-button (click)="auth.loginWithRedirect()">
+      <button mat-button (click)="auth.loginWithRedirect()" style='width: 100%; text-align: left;'>
         <mat-icon>login</mat-icon>
         Log in
       </button>
