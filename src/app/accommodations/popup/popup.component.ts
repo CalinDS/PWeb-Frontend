@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import {Component, Inject, OnInit} from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AuthService } from '@auth0/auth0-angular';
 
 @Component({

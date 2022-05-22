@@ -6,7 +6,15 @@
         <p>{{user.contact_info}}</p>
     </mat-card-content>
     <mat-divider inset></mat-divider>
-    <mat-card-actions>
-        
-    </mat-card-actions>
+    <mat-card-content>
+        <br>
+        <p *ngIf="user.type == 'refugee' && !hasAccommodation">You don't have an assigned accommodation yet.</p>
+        <div *ngIf="hasAccommodation">
+            <p>You are assigned to this accommodation.</p>
+            <br>
+            <img src={{user.accommodation.photo}} />
+            <p>{{user.accommodation.address}}</p>
+            <p><b>Contact info: </b>{{user.accommodation.owner_name}} - {{user.accommodation.contact_info}}</p>
+        </div>
+    </mat-card-content>
 </mat-card>

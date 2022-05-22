@@ -36,7 +36,7 @@
       </button>
     </mat-list-item>
 
-    <mat-list-item>
+    <mat-list-item *ngIf="user.type != 'refugee'">
       <button mat-button routerLink="/bookings" routerLinkActive="active">
         <mat-icon>calendar_today</mat-icon>
         Bookings

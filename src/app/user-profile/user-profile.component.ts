@@ -11,6 +11,7 @@ export class UserProfileComponent implements OnInit {
 
   authUser: any;
   user: any;
+  hasAccommodation = false;
 
   constructor(public auth: AuthService, private http: HttpClient) {}
 
@@ -21,6 +22,7 @@ export class UserProfileComponent implements OnInit {
         this.http.get<any>('http://127.0.0.1:5000/users/' + user?.sub?.replace('|', '')).subscribe(data => {
           this.user = data;
           // console.log(this.user);
+          this.hasAccommodation = this.user.type == 'refugee' && this.user.accommodation
         });
       }
     );
