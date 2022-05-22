@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import { PopupComponentUser } from './popup/popup.component';
 
 const ELEMENT_DATA: any[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
@@ -35,7 +37,7 @@ export class AdministratorComponent implements OnInit {
   displayedColumns: string[] = ['name', 'type', 'email'];
   dataSource!: any;
 
-  constructor(public auth: AuthService, private http: HttpClient) { }
+  constructor(public auth: AuthService, private http: HttpClient, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     
@@ -50,6 +52,15 @@ export class AdministratorComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  openPopup(e: any) {
+    // console.log(e);
+    this.dialog.open(PopupComponentUser, {
+      data: {
+        user: e,
+      },
+    });
   }
 
 }

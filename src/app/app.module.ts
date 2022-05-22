@@ -32,6 +32,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateAccommodationComponent } from './create-accommodation/create-accommodation.component';
 import { AccommodationComponent } from './accommodations/accommodation/accommodation.component';
 import { PopupComponent } from './accommodations/popup/popup.component';
+import { PopupComponentUser } from './administrator/popup/popup.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { BookingComponent } from './bookings/booking/booking.component';
 import { AdministratorComponent } from './administrator/administrator.component';
@@ -48,6 +49,7 @@ import { AdministratorComponent } from './administrator/administrator.component'
     CreateAccommodationComponent,
     AccommodationComponent,
     PopupComponent,
+    PopupComponentUser,
     BookingsComponent,
     BookingComponent,
     AdministratorComponent,
