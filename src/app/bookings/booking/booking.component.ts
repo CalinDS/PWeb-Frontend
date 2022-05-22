@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -14,14 +15,15 @@ export class BookingComponent implements OnInit {
   @Input() booking_id: any;
   
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     console.log(this.refugees)
   }
 
-  cancelBooking(): void {
-    
+  cancelBooking(id: any): void {
+    this.http.post<any>('http://127.0.0.1:5000/bookings/' + id + '/delete', {}).subscribe();
+    window.location.reload();
   }
 
 }
