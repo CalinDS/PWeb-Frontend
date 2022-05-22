@@ -25,4 +25,8 @@
         Book this
     </button>
 
+    <button *ngIf="user.type != 'refugee'" mat-stroked-button color="warn" class="book-button" (click)="deleteAccommodation()">
+        Delete accommodation
+    </button>
+
 </div>

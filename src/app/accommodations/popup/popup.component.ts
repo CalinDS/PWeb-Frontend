@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import {Component, Inject, OnInit} from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
@@ -17,7 +18,7 @@ export class PopupComponent implements OnInit {
 ;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, public auth: AuthService, private http: HttpClient,
-    public dialogRef: MatDialogRef<PopupComponent>) { }
+    public dialogRef: MatDialogRef<PopupComponent>, private router: Router) { }
 
   ngOnInit(): void {
     this.auth.user$.subscribe(
@@ -38,6 +39,12 @@ export class PopupComponent implements OnInit {
     };
     // console.log(body);
     this.http.post<any>('http://127.0.0.1:5000/bookings/create', body).subscribe();
+    this.dialogRef.close();
+  }
+
+  deleteAccommodation(): void {
+    this.http.post<any>('http://127.0.0.1:5000/accommodations/' + this.data.accommodation.id + '/delete', {}).subscribe();
+    window.location.reload();
     this.dialogRef.close();
   }
 
