@@ -11,12 +11,17 @@ export class BookingComponent implements OnInit {
   @Input() image: any;
   @Input() beds_no: any;
   @Input() refugees: any;
+  @Input() booking_id: any;
   
 
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.refugees)
+  }
+
+  cancelBooking(): void {
+    
   }
 
 }

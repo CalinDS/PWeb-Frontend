@@ -31,4 +31,9 @@ export class UserProfileComponent implements OnInit {
     );
   }
 
+  cancelBooking(): void {
+    this.http.post<any>('http://127.0.0.1:5000/bookings/' + this.user.accommodation.booking_id + '/delete', {}).subscribe();
+    window.location.reload();
+  }
+
 }

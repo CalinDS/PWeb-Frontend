@@ -10,11 +10,15 @@
         <br>
         <p *ngIf="user.type == 'refugee' && !hasAccommodation">You don't have an assigned accommodation yet.</p>
         <div *ngIf="hasAccommodation">
-            <p>You are assigned to this accommodation.</p>
+            <p>You are assigned to this accommodation.
+            <button mat-stroked-button color="warn" class="book-button" (click)="cancelBooking()">
+                Cancel your booking
+            </button></p>
             <br>
             <img src={{user.accommodation.photo}} />
             <p>{{user.accommodation.address}}</p>
             <p><b>Contact info: </b>{{user.accommodation.owner_name}} - {{user.accommodation.contact_info}}</p>
+
         </div>
     </mat-card-content>
 </mat-card>
